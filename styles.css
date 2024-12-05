@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Default font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light gray background */
+    color: #333; /* Dark text for readability */
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333; /* Dark gray background */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white; /* White text for links */
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #4CAF50; /* Green highlight on hover */
+    color: white;
+}
+
+/* Main Content Area */
+main {
+    padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333; /* Match navigation bar */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Buttons */
+button, a.button {
+    background-color: #4CAF50; /* Green buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, a.button:hover {
+    background-color: #45a049; /* Slightly darker green */
+}
+
+/* Forms */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+}
+
+/* Charity Cards (Charities List Page) */
+div {
+    background: white;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+div h3 {
+    margin-top: 0;
+}
+
+/* API Data Section Styling */
+#data-container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.charity-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.charity-item:hover {
+    transform: scale(1.02); /* Slightly enlarges the element */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.charity-item h3 {
+    color: #4CAF50;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.charity-item p {
+    color: #555;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Accessibility Enhancements */
+a, button {
+    color: white;
+}
+
+a:focus, button:focus {
+    outline: 2px solid #4CAF50;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    alt: "Relevant image"; /* Placeholder alt text */
+}
+
+/* Responsive Design for API Section */
+@media (max-width: 768px) {
+    #data-container {
+        width: 90%;
+    }
+
+    .charity-item {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
