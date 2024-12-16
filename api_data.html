@@ -7,21 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav>
         <a href="index.html">Home</a>
         <a href="charities.html">Charities</a>
         <a href="charity_profile.html">Profile</a>
-        <a href="api_data.html">Charity Data</a>
+        <a href="api_data.html" class="active">Charity Data</a>
     </nav>
 
-    <!-- Content -->
     <main>
         <h1>Charity Data</h1>
-        <div id="apiData">Loading data...</div>
+        <div id="data-container">
+            <div class="charity-item">
+                <h3>Local Food Bank Initiative</h3>
+                <p>This charity provides meals to families in need by organizing community food drives and donations.</p>
+            </div>
+
+            <div class="charity-item">
+                <h3>Save the Forests Foundation</h3>
+                <p>Focused on reforestation and conservation, this charity plants trees and educates the public about protecting green spaces.</p>
+            </div>
+
+            <div class="charity-item">
+                <h3>Community Shelter Support</h3>
+                <p>Offers temporary housing and assistance to homeless individuals, helping them find employment and stability.</p>
+            </div>
+        </div>
     </main>
 
-    <!-- JavaScript -->
-    <script src="fetch_data.js"></script>
+    <footer>
+        <p>&copy; 2024 HelpHub. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
