@@ -1,33 +1,31 @@
-// Fetch data from the API
+// fetch_data.js
 document.addEventListener("DOMContentLoaded", () => {
-    const apiURL = "https://api.charitynavigator.org/v2/organizations?app_id=YOUR_APP_ID&app_key=YOUR_APP_KEY";
+    const apiURL = "https://jsonplaceholder.typicode.com/posts"; // Replace with your chosen API
+    const dataContainer = document.getElementById("apiData"); // A container in your HTML to display data
 
+    // Function to fetch data
     fetch(apiURL)
-        .then(response => {
+        .then((response) => {
             if (!response.ok) {
-                throw new Error("Network response was not ok");
+                throw new Error("Network response was not ok.");
             }
-            return response.json();
+            return response.json(); // Parse JSON response
         })
-        .then(data => {
-            displayData(data);
+        .then((data) => {
+            // Display data dynamically
+            let content = "<h2>Charity Data</h2>";
+            data.slice(0, 5).forEach((item) => { // Display first 5 items
+                content += `
+                    <div>
+                        <h3>${item.title}</h3>
+                        <p>${item.body}</p>
+                    </div>
+                `;
+            });
+            dataContainer.innerHTML = content;
         })
-        .catch(error => {
-            console.error("There was a problem with the fetch operation:", error);
-            document.getElementById("data-container").innerHTML = `<p>Unable to fetch data at this time. Please try again later.</p>`;
+        .catch((error) => {
+            dataContainer.innerHTML = `<p style="color: red;">Unable to fetch data at this time.</p>`;
+            console.error("Error fetching data:", error);
         });
 });
-
-// Function to display data on the page
-function displayData(data) {
-    const container = document.getElementById("data-container");
-    data.slice(0, 5).forEach(item => {
-        const charityElement = document.createElement("div");
-        charityElement.className = "charity-item";
-        charityElement.innerHTML = `
-            <h3>${item.name}</h3>
-            <p>${item.mission ? item.mission : "Mission details not available."}</p>
-        `;
-        container.appendChild(charityElement);
-    });
-}
