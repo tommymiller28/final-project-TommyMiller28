@@ -25,7 +25,7 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
     background-color: #4CAF50; /* Green highlight on hover */
     color: white;
 }
@@ -33,6 +33,8 @@ nav a:hover {
 /* Main Content Area */
 main {
     padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Centers content and limits width */
 }
 
 /* Footer Styles */
@@ -44,6 +46,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 0.9rem;
 }
 
 /* Buttons */
@@ -55,6 +58,8 @@ button, a.button {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 button:hover, a.button:hover {
@@ -90,16 +95,24 @@ form button {
 }
 
 /* Charity Cards (Charities List Page) */
-div {
+.card {
     background: white;
-    margin: 10px 0;
+    margin: 15px 0;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.2s;
 }
 
-div h3 {
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.card h3 {
     margin-top: 0;
+    color: #4CAF50;
+    font-size: 1.4em;
 }
 
 /* API Data Section Styling */
@@ -120,7 +133,7 @@ div h3 {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .charity-item:hover {
@@ -130,7 +143,7 @@ div h3 {
 
 .charity-item h3 {
     color: #4CAF50;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 10px;
 }
 
@@ -152,17 +165,32 @@ a:focus, button:focus {
 img {
     max-width: 100%;
     height: auto;
-    alt: "Relevant image"; /* Placeholder alt text */
+    display: block;
+    margin: 0 auto;
 }
 
-/* Responsive Design for API Section */
+/* Responsive Design for API Section and Main Layout */
 @media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
     #data-container {
-        width: 90%;
+        width: 95%;
+        padding: 15px;
     }
 
     .charity-item {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
         padding: 10px;
     }
 }
